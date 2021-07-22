@@ -5,7 +5,7 @@ import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { deleting, put } from "../../api/commonAPI";
 import EditForm from "./EditForm";
 // import Blog from "../Blog/Blog";
-import history from "../routes/history";
+import { useHistory } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
 import Blog from "../Blog/Blog";
 
@@ -13,6 +13,7 @@ import Blog from "../Blog/Blog";
 const { Meta } = Card;
 
 const Cards = ({ cardData }) => {
+  const history = useHistory();
   const [selectedCardId, setSelectedCardId] = useState(0);
   const [deleteModelVisibility, setDeleteModelVisibility] = useState(false);
   const [editModelVisibility, setEditModelVisibility] = useState(false);
